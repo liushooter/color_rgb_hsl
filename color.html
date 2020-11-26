@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>变色龙</title>
+  <script src="./colorutil.js"></script>
+
+  <script type="text/javascript">
+    function changeColor() {
+      var hex = document.getElementById('color').value
+      var txt = document.getElementById('txt')
+
+      var rgb = ColorUtil.hex2rgb(hex)
+
+      console.log(rgb)
+
+      var newrgb = {}
+
+      newrgb["R"] = rgb["R"] * 0.5
+      newrgb["G"] = rgb["G"] * 0.8
+      newrgb["B"] = rgb["B"] * 0.3
+
+      var newhex = ColorUtil.rgb2hex(newrgb)
+      console.log(newhex)
+
+      txt.style.color = hex
+    }
+
+ </script>
+</head>
+
+<body>
+  <input name="" type="color" id="color" value="#3322ff" onchange="changeColor()" />
+  <br/>
+  <span id="txt">变色龙</span>
+</body>
+
+</html>
