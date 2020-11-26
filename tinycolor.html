@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TinyColor</title>
+  <script src="./tinycolor-min.js"></script>
+
+  <script type="text/javascript">
+    function changeColor() {
+      var hex = document.getElementById('color').value
+      var txt = document.getElementById('txt')
+
+      txt.style.color = hex
+      document.bgColor = tinycolor(hex).complement() // 补色
+    }
+
+ </script>
+</head>
+
+<body>
+  <input name="" type="color" id="color" value="#3322ff" onchange="changeColor()" />
+  <br/>
+  <span id="txt">变色龙</span>
+</body>
+
+</html>
